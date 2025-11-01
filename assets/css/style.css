@@ -1,0 +1,728 @@
+/* ================================
+   🌍 Global Styles
+================================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: #1a202c;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #ffcc00;
+}
+
+.page-content {
+  padding-top: 80px; /* Keeps content below fixed header */
+}
+
+
+/* ================================
+   🌿 Header & Navbar
+================================ */
+header {
+  background: #14532d; /* Dark green */
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+header nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+header nav a:hover {
+  color: #ffcc00;
+}
+
+/* Mobile nav */
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  header nav a {
+    margin: 0.5rem 0;
+  }
+}
+
+
+/* ================================
+   🌿 Footer
+================================ */
+footer {
+  background: #14532d;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #ffcc00;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+
+/* ================================
+   🏠 Home Page (index.php)
+================================ */
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+/* ---------- General Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  background: url('assets/images/mirik-hero.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* overlay */
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: fadeInDown 1s ease;
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* ---------- Features / Places ---------- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 1rem;
+}
+
+.features .card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.features .card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.features .card:hover img {
+  transform: scale(1.08);
+}
+
+.features .card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #006d77;
+}
+
+.features .card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.features .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* ---------- Gallery Section ---------- */
+.gallery {
+  margin: 3rem auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: #006d77;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: #ffd166;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ffba08;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Famous Places Card Hover + Shine ---------- */
+.card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: #fff;
+}
+
+.card img {
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+.card-title {
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+  color: #198754; /* green accent */
+}
+
+/* Shine effect */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: skewX(-20deg);
+  z-index: 2;
+  opacity: 0;
+}
+
+.card:hover::before {
+  opacity: 1;
+  animation: shine 0.9s ease forwards;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+
+
+
+/* ================================
+   ℹ️ About Page (about.php)
+================================ */
+/* General */
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: #fafafa;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.about-hero {
+  position: relative;
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.about-hero .hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+.about-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* About Section */
+.about-writing {
+  background: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #0077b6;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.section-text {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Places Section */
+.places {
+  background: #fff;
+}
+
+.place-img-large {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.place-img-large:hover {
+  transform: scale(1.03);
+}
+
+.places h3 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.places p {
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* Gallery Section */
+.gallery {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.gallery-img {
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.carousel-caption {
+  background: rgba(0,0,0,0.55);
+  border-radius: 10px;
+  padding: 15px;
+}
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.carousel-caption p {
+  font-size: 1rem;
+}
+
+/* Lightbox customization */
+.lb-data .lb-caption {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #eee;
+  text-align: center;
+}
+.lb-data .lb-number {
+  display: none;
+}
+
+/* Culture */
+.culture {
+  background: #f0f8ff;
+  border-radius: 20px;
+  padding: 70px 20px;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.culture p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ================================
+   🏫 Schools Page (schools.php)
+================================ */
+/* ===== FONTS ===== */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #2d2d2d;
+  background: #f9fafb;
+}
+h1, h2, .card-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ===== CONTAINERS ===== */
+.section-padding {
+  padding: 4rem 1rem;
+}
+#schoolsGrid {
+  margin-top: 1rem;
+}
+
+/* ===== CARD STYLE ===== */
+.school-card {
+  background: #fff;
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  transition: all .3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.school-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0,0,0,.15);
+}
+
+/* Card image */
+.card-img-top {
+  filter: saturate(1.08) contrast(1.05);
+  transition: transform .3s ease;
+}
+.school-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Card body */
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Titles & text */
+.card-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: .5rem;
+}
+.badge {
+  font-size: 0.75rem;
+  padding: .4rem .65rem;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 10px !important;
+  font-size: 0.85rem;
+}
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+}
+.btn-outline-primary:hover {
+  background: #007bff;
+  color: #fff;
+}
+.btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+.btn-outline-secondary:hover {
+  background: #6c757d;
+  color: #fff;
+}
+
+/* Inputs */
+#localFilter, #globalQuery {
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+}
+.input-group > .btn {
+  border-radius: 12px;
+}
+
+/* Page background separation */
+main {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .card-body { padding: 1rem; }
+  .card-title { font-size: 1rem; }
+}
+
+/* ================================
+   ✉️ Contact Page (contact.php)
+================================ */
+/* ---------- Feedback Section ---------- */
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background: #198754;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #145c38;
+}
+
+/* Developer Section */
+.developer-info {
+  background: #fff;
+  padding: 2rem 1rem;
+  margin: 2rem auto 0;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.dev-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dev-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #198754;
+  object-fit: cover;
+}
+
+.dev-details h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.4rem;
+  color: #198754;
+}
+
+.dev-details p {
+  margin: 0.2rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
